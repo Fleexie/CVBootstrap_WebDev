@@ -1,0 +1,142 @@
+/* Alt der gælder for mobil og højere */
+
+* { /* Gælder alt på hele siden */
+    -webkit-box-sizing: border-box; /* -webkit- browserunderstøttelse */
+    box-sizing: border-box; /* Bokse har altid den størrelse man giver uanset om der tilføjes margen mv. */
+}
+
+body {
+    margin: 0; /* Ingen kanter i siden af browser */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0; /* Ingen ydre margen fra overskrifter */
+    padding: 0; /* Ingen indre margen fra overskrifter */
+}
+
+ul, ol {
+    margin: 0; /* Ingen ydre margen fra lister */
+    padding: 0; /* Ingen indre margen fra lister */
+    list-style-position: inside; /* List punkter står på linje */
+}
+
+li {
+    margin: 0; /* Ingen ydre margen fra listpunkter */
+}
+
+p {
+    margin: 0; /* Ingen ydre margen fra paragraffer */
+    padding: 0; /* Ingen indre margen fra paragraffer */
+}
+
+/* Sikrer billeder er responsive */
+img {
+    display: block; /* Billeder er et element (laver linjeskift) */
+    max-width: 100%; /* Bredde må maks fylde 100% */
+    height: auto; /* Højden skal tilpasse sig */
+}
+
+header, section{
+    min-height: 100vh;
+    position: relative;
+}
+
+header::before{
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1e1e1e;
+    background-image: url("../img/top-graphics-m.svg");
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+}
+
+.bi-chevron-double-down{
+    animation: chevronAnim ease-in-out infinite 1.5s;
+}
+@keyframes chevronAnim {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.pointer{
+    cursor: pointer;
+}
+.carousel-indicators{
+    height: fit-content;
+}
+
+.bg-dark{
+    background-color: #1e1e1e !important;
+}
+
+.card-custom{
+    width: 300px;
+
+}
+
+.socials{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.socials h4{
+    width: 100%;
+    text-align: center;
+    padding-top: 25px;
+}
+.socials svg{
+    margin: 10px;
+}
+@media screen and (min-width: 768px) {
+    header::before{
+        background-image: url("../img/top-graphics.svg");
+        background-size: contain;
+    }
+
+    .card-custom{
+        width: 400px;
+    }
+    
+    #aboutMe{
+        background-color: #1e1e1e;
+        color: white;
+    }
+    .aboutText{
+        padding: 0 10%;
+    }
+
+    .lines{
+        border-left: 1px solid;
+        border-right: 1px solid;
+    }
+
+}
+
+
+@media screen and (min-width: 992px) {
+    /* Alt der ændres i tablet liggende fra mobil og tablet stående */
+}
+
+@media screen and (min-width: 1200px) {
+    /* Alt der ændres i computer fra mobil, tablet stående og tablet liggende */
+}
+
+@media print {
+    /* Alt der gælder for print specifikt */
+}
